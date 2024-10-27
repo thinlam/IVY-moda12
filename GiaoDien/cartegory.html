@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="top-log">
-                    <img src="image/logo.png">
+                    <a href="index.html"><img src="image/logo.png"></a>
                 </div>
                 <div class="top-menu-items">
                     <ul>
@@ -62,7 +62,7 @@
                 <div class="top-menu-icons">
                     <ul>
                         <li>
-                            <input placeholder="Tìm Kiếm" type="text">
+                            <input id="searchInput" placeholder="Tìm Kiếm sản phẩm..." type="text" onkeyup="searchProduct()">
                             <i class="fa fa-search btn_search"></i>
                         </li>
                         <li>
@@ -76,6 +76,7 @@
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
@@ -111,7 +112,9 @@
                         <li class="cartegory-left-li"><a href="">TRẺ EM</a></li>
                         <li class="cartegory-left-li"><a href="">BỘ SƯU TẬP</a></li>
                     </ul>
-
+                </div>
+                <div id="noResultsMessage" style="display: none; color: red; font-weight: bold;">
+                    Không tìm thấy sản phẩm nào.
                 </div>
                 <div class="cartegory-right row">
                     <div class="cartegory-right-top-item">
@@ -130,12 +133,13 @@
                     <div class="cartegory-right-content row">
                         <div class="cartegory-right-content-item">
                             <img src="image/sp1.jpg" alt="">
-                            <h1>Đầm Tuysi cổ đức Attina 2 lớp</h1>
+                            <h1>
+                                <a href="product.html">Đầm Tuysi cổ đức Attina 2 lớp</a></h1>
                             <P>2.290.000<sup>đ</sup></P>
                         </div>
                         <div class="cartegory-right-content-item">
                             <img src="image/sp2.jpg" alt="">
-                            <h1>Đầm Tuysi A Yellow</h1>
+                            <h1><a href="product1.html">Đầm Tuysi A Yellow</a></h1>
                             <P>2.490.000<sup>đ</sup></P>
                         </div>
                         <div class="cartegory-right-content-item">
@@ -229,5 +233,6 @@
 </body>
 <!--------------------------------------------------------------------------------------------------------SCRIPT-------------------------------------------------------------------------------->
 <script src="js/Script.js"></script>
+<SCript src="js/search.js"></SCript>
 
 </html>

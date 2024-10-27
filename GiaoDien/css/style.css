@@ -592,4 +592,37 @@ a {
     left: 50%;
     border-radius: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.product-content-right-bottom-content-title {
+    border-bottom: 2px solid #dddddd;
+}
+
+.product-content-right-bottom-content-title-item {
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.product-content-right-bottom-content-title-item p {
+    font-family: var(--main-text-font);
+    font-size: 16px;
+}
+
+.product-content-right-bottom-content {
+    padding-top: 30px;
+}
+
+.product-content-right-bottom-content {
+    font-family: var(--main-text-font);
+    font-size: 14px;
+}
+
+.product-content-right-bottom-content-chitietsanpham {
+    display: none;
+}
+
+.activeB {
+    display: none;
 }
