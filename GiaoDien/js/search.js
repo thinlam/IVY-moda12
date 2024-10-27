@@ -13,33 +13,33 @@ function searchIndex() {
     }
 }
 
+// Function to perform the search
 function searchProduct() {
-    var input = document.getElementById('searchInput').value.toLowerCase();
-    console.log('Search input:', input);
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let products = document.querySelectorAll(".cartegory-right-content-item h1");
 
-    var products = document.getElementsByClassName('cartegory-right-content-item');
-    var found = false;
-
-    for (var i = 0; i < products.length; i++) {
-        var productNameElement = products[i].getElementsByTagName('h1')[0];
-        if (productNameElement) {
-            var txtValue = productNameElement.textContent || productNameElement.innerText;
-            console.log('Product name:', txtValue);
-
-            if (txtValue.toLowerCase().indexOf(input) > -1) {
-                products[i].style.display = "";
-                found = true;
-            } else {
-                products[i].style.display = "none";
-            }
+    let found = false;
+    products.forEach(product => {
+        if (product.innerText.toLowerCase().includes(input)) {
+            product.parentElement.style.display = "block"; // Show matching product
+            found = true;
+        } else {
+            product.parentElement.style.display = "none"; // Hide non-matching product
         }
-    }
+    });
 
+    // Display XSS alert if no products found
     if (!found) {
-        console.log('No products found');
-        document.getElementById('noResultsMessage').style.display = "block";
+        alert("<xin chào>");
+        document.getElementById("noResultsMessage").style.display = "block";
     } else {
-        console.log('Products found');
-        document.getElementById('noResultsMessage').style.display = "none";
+        document.getElementById("noResultsMessage").style.display = "none";
     }
 }
+
+// Run search on Enter key press
+document.getElementById("searchInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        searchProduct();
+    }
+});
