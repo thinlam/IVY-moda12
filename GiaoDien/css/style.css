@@ -514,6 +514,11 @@ a {
     cursor: pointer;
 }
 
+.size span.active {
+    background-color: black;
+    color: #fff;
+}
+
 .quantity {
     display: flex;
     margin-bottom: 20px;

@@ -1,17 +1,48 @@
+// index.html
 function searchIndex() {
-    var input = document.getElementById('searchIndex').value.toLowerCase();
-    var categories = document.getElementsByClassName('top-menu-item');
+    const searchInput = document.getElementById("searchIndex");
 
-    for (var i = 0; i < categories.length; i++) {
-        var categoryName = categories[i].parentElement.textContent.toLowerCase();
+    searchInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
 
-        if (categoryName.indexOf(input) > -1) {
-            categories[i].parentElement.style.display = "";
-        } else {
-            categories[i].parentElement.style.display = "none";
+            const query = searchInput.value.toLowerCase();
+
+            // Product names and keywords for matching
+            const productNames = [
+                "đầm tuysi cổ đức attina 2 lớp",
+                "đầm tuysi a yellow",
+                "đầm lụa fairy họa tiết",
+                "đầm pink silk sarong lady",
+                "đầm a xếp ly rose red"
+            ];
+            const categoryKeywords = ["đầm", "áo", "quần"];
+
+            // Check for product-specific redirect
+            if (productNames.includes(query)) {
+                window.location.href = "product.html";
+            }
+            // Check for category-specific redirect
+            else if (categoryKeywords.some(keyword => query.includes(keyword))) {
+                window.location.href = "cartegory.html";
+            }
+            // Search for partial matches
+            else {
+                const matches = productNames.filter(name => name.includes(query));
+                if (matches.length > 0) {
+                    alert(`Products matching "${query}":\n- ${matches.join("\n- ")}`);
+                    // Optionally redirect to category page where results could be displayed
+                    // window.location.href = "cartegory.html";
+                } else {
+                    alert("No matching products found.");
+                }
+            }
         }
-    }
+    });
 }
+
+
+
 
 // Function to perform the search
 function searchProduct() {

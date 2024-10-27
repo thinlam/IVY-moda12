@@ -54,3 +54,10 @@ if (butTon) {
         document.querySelector(".product-content-right-bottom-content-big").classList.toggle("activeB")
     })
 }
+//----------------------------------size------------------------------
+document.querySelectorAll('.size span').forEach(function(sizeOption) {
+    sizeOption.addEventListener('click', function() {
+        // Toggle 'active' class on click
+        this.classList.toggle('active');
+    });
+});
