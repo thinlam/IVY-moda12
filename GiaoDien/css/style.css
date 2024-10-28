@@ -330,6 +330,18 @@ a {
     padding: 100px 0 0;
 }
 
+#noResultsMessage {
+    display: none;
+    /* It will only show when no results are found */
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    /* Center the text */
+    margin-top: 10px;
+    /* Add space below the sorting section */
+}
+
 .cartegory-top {
     margin-bottom: 50px;
 }
