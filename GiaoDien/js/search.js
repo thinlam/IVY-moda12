@@ -45,11 +45,42 @@ function searchIndex() {
 
 
 // Function to perform the search
+// Function to perform the search
+// Function to perform the search
+// Function to perform the search
+// Sanitize input to prevent XSS
+function sanitizeInput(input) {
+    // Remove potential XSS patterns
+    return input.replace(/[<>\/]/g, '');
+}
+
 function searchProduct() {
     let input = document.getElementById("searchInput").value.toLowerCase();
+    let sanitizedInput = sanitizeInput(input); // Sanitize input to remove XSS attacks
     let products = document.querySelectorAll(".cartegory-right-content-item h1");
 
     let found = false;
+    let xssDetected = input !== sanitizedInput; // Detect XSS
+    const xssPattern = /<|>|script|&lt|&gt/gi;
+    let isXSSAttack = xssPattern.test(input);
+
+
+
+
+    if (isXSSAttack) {
+        alert("XSS attack detected. Clearing all product listings for security.");
+
+        // Clear all products
+        products.forEach(product => {
+            product.parentElement.style.display = "none";
+        });
+
+        // Clear the input field
+        inputElement.value = '';
+        return;
+    }
+
+    // Normal search logic
     products.forEach(product => {
         if (product.innerText.toLowerCase().includes(input)) {
             product.parentElement.style.display = "block"; // Show matching product
@@ -58,15 +89,15 @@ function searchProduct() {
             product.parentElement.style.display = "none"; // Hide non-matching product
         }
     });
-
-    // Display XSS alert if no products found
+    // If no products are found, display normal alert
     if (!found) {
-        alert("<xin chào>");
+        alert("No matching products found.");
         document.getElementById("noResultsMessage").style.display = "block";
     } else {
         document.getElementById("noResultsMessage").style.display = "none";
     }
 }
+
 
 // Run search on Enter key press
 document.getElementById("searchInput").addEventListener("keypress", function(event) {
