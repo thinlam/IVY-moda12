@@ -323,6 +323,56 @@ a {
     margin-top: 30px;
 }
 
+.cartegory-right-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cartegory-right-content-inner {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.cartegory-right-content-item {
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.cartegory-right-content-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.cartegory-right-content-inner {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 
 /*..............................Cartegory..................*/
 

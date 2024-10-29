@@ -9,8 +9,6 @@ imgPosition.forEach(function(image, index) {
     dotItem[index].addEventListener("click", function() {
         slider(index)
     })
-
-
 })
 
 function imgSlide() {

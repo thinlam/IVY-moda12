@@ -7,7 +7,7 @@ function searchIndex() {
             event.preventDefault();
 
             const query = searchInput.value.toLowerCase().trim();
-            const xssPattern = /<.*script.*>/i;
+
             // Product names and SKUs for matching
             const products = [
                 { name: "đầm tuysi cổ đức attina 2 lớp", sku: "48B9902", page: "product.html" },
