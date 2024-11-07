@@ -13,7 +13,7 @@ function searchIndex() {
                 { name: "đầm tuysi cổ đức attina 2 lớp", sku: "48B9902", page: "product.html" },
                 { name: "đầm tuysi a yellow", sku: "48B9918", page: "product1.html" }
             ];
-            const categoryKeywords = ["đầm", "áo", "quần"];
+            const categoryKeywords = ["đầm"];
 
             // Check for product-specific redirect
             const matchedProduct = products.find(product =>
@@ -97,4 +97,5 @@ document.getElementById("searchInput").addEventListener("keypress", function(eve
     if (event.key === "Enter") {
         searchProduct();
     }
+
 });

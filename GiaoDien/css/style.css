@@ -453,6 +453,28 @@ a {
     padding: 12px 0;
 }
 
+.cartegory-right-content-new-item {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center items horizontally */
+}
+
+.cartegory-right-content-new-item-menus button {
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    /* Arrange items in a row */
+    gap: 30px;
+    /* Adds spacing between menu items */
+    width: 100%;
+    /* Optional: makes the row full width */
+    justify-content: center;
+    cursor: pointer;
+    /* Center items in row */
+}
+
 .cartegory-right-content-item h1 {
     font-size: 11px;
     font-family: var(--main-text-font);
